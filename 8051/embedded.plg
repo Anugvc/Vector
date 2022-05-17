@@ -1,0 +1,71 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+V:\8051\embedded.uvproj
+Project File Date:  05/06/2022
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling p1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=8
+"embedded" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+assembling p1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=8
+"embedded" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+assembling p1.asm...
+linking...
+Program Size: data=8.0 xdata=0 code=8
+"embedded" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling p1.c...
+p1.c(22): warning C206: 'delay_ms': missing function-prototype
+p1.c(22): error C267: 'delay_ms': requires ANSI-style prototype
+p1.c(26): error C141: syntax error near ''
+Target not created
+Build target 'Target 1'
+compiling p1.c...
+p1.c(22): warning C206: 'delay_ms': missing function-prototype
+p1.c(22): error C267: 'delay_ms': requires ANSI-style prototype
+p1.c(26): error C141: syntax error near ''
+Target not created
+Build target 'Target 1'
+compiling p1.c...
+p1.c(22): warning C206: 'delay_ms': missing function-prototype
+p1.c(22): error C267: 'delay_ms': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling p1.c...
+p1.c(5): error C158: '_delay': function contains unnamed parameter
+p1.c(5): error C141: syntax error near 'sbit'
+Target not created
+Build target 'Target 1'
+compiling p1.c...
+p1.c(5): error C158: '_delay': function contains unnamed parameter
+p1.c(5): error C141: syntax error near 'sbit'
+p1.c(5): error C141: syntax error near '.0', expected ';'
+Target not created
+Build target 'Target 1'
+compiling p1.c...
+p1.c(5): error C158: '_delay': function contains unnamed parameter
+p1.c(5): error C141: syntax error near 'sbit'
+Target not created
+Build target 'Target 1'
+compiling p1.c...
+p1.c(13): warning C206: 'delay_ms': missing function-prototype
+p1.c(13): error C267: 'delay_ms': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling p1.c...
+linking...
+Program Size: data=9.0 xdata=0 code=60
+"embedded" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=60
+"embedded" - 0 Error(s), 0 Warning(s).

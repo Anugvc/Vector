@@ -1,0 +1,8 @@
+CSEG AT 0x0
+MOV R0, #250
+L1: DJNZ R0, L1
+
+MOV R0, #247 
+L2: DJNZ R0, L2
+
+END 
