@@ -46,9 +46,7 @@ void main(int argc, char ** argv)
 
 	rewind(fp1);
 	rewind(fp2);
-	//char*p = malloc(sizeof(char)*(c1+c2+2));
-	//char *s1= malloc(sizeof(char)*(c2+c1));
-	
+			
 char s1[100],s2[100];	
 
 	lim=l1>l2?l2:l1;	
@@ -57,24 +55,12 @@ char s1[100],s2[100];
 	{
 		fgets(s1,100,fp1);
 		fgets(s2,100,fp2);
-snugrah sdffg fg	//	printf(" %s\n*******************%s\n",s1,s2);
-		//strcat(p,s1);
-		//printf("%s\n",s1);
-		fputs(s1,fp3);
+snugrah sdffg fg							fputs(s1,fp3);
 		fseek(fp3,-1,SEEK_CUR);
 		fputs(s2,fp3);
 	}
 
-	/*if(l1>l2)
-	{	
-		while(fgets(p,c1,fp1))
-		fputs(p,fp3);
-	}
-	else if(l1<l2)
-	{
-		while(fgets(p,c2,fp2))
-		fputs(p,fp3);
-	}*/
+	
 		
 }
 

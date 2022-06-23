@@ -3,13 +3,14 @@
 using namespace std;
 
 template <class Type>
-class stack
+class Stack
 {
-	int top;
 	Type stk[max_size];
 	public:
-	stack()
+	static int top;
+	Stack()
 	{
+		
 		top = -1;
 	}
 	
@@ -26,18 +27,18 @@ class stack
 		if(top<0)
 			cout<<"Stack underflow"<<endl;
 		else
-			cout<<"Popped:"<<stk[--top]<<endl;
+			cout<<"Popped:"<<stk[top--]<<endl;
 	}
 	void display_stack()
 	{
-		int index = top; 
-		while(index>0)
-		{
-			cout<<stk[index];
-			return;
-		}
-		if(index<=0)
+		int index = top;
+	        
+		if(index<0)
 			cout<<"Stack underflow"<<endl;
+		while(index>=0)
+		{
+			cout<<stk[index--]<<endl;
+		}
 
 	}
 		
@@ -46,22 +47,29 @@ class stack
 
 };
 
+template<class Type>
+int Stack<Type>::top;
+
 template <class Type>
-void stack<Type> :: stack_operation(int op)
+void Stack<Type> :: stack_operation(int op)
 {
+	 
 	Type val;
+	
+
 	if(op == 1)
 	{	
 		cout<<"Push"<<endl;
 		cout<<"Enter value"<<endl;
 		cin>>val;
 		push(val);
+		cout<<"top="<<top<<endl;
 		return;
 	}
 	else if(op == 2)
 	{
-		cout<<"Pop"<<endl;
-		cout<<"Popping:"<<stk[top]<<endl;
+		
+		cout<<"Popping:"<<stk[top]<<" ..."<<endl;
 		pop();
 		cout<<"Popped"<<endl;
 		return;
@@ -73,6 +81,90 @@ void stack<Type> :: stack_operation(int op)
 	}
 }
 
+void switch_fun(int op)
+{
+	int op1;
+	switch (op)
+	{
+		case 1:
+				{
+				Stack <int> stk1;
+				while(1)
+				{
+				cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
+				cin>>op1;
+				if(op1 > 0 && op1 < 4)
+					stk1.stack_operation(op1);
+				if(op1==4)
+					return;
+				}
+				}
+				break;
+
+		case 2:
+			{
+			Stack <char> stk2;
+			while(1)
+			{
+			cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
+			cin>>op1;
+			if(op1 > 0 && op1 < 4)
+				stk2.stack_operation(op1);
+			if(op1==4)
+				return;
+			}
+			}
+			break;
+		case 3:
+				{
+				Stack <float> stk3;
+				while(1)
+				{
+				cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
+				cin>>op1;
+				if(op1 > 0 && op1 < 4)
+					stk3.stack_operation(op1);
+				if(op1==4)
+					return;
+				}
+				}
+				break;
+		case 4:
+				{
+				Stack <double> stk4;
+				while(1)
+				{
+				cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
+				cin>>op1;
+				if(op1 > 0 && op1 < 4)
+					stk4.stack_operation(op1);
+				if(op1==4)
+					return;
+				}
+				}
+				break;
+		case 5:
+				{
+				Stack <string> stk5;
+				while(1)
+				{
+				cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
+				cin>>op1;
+				if(op1 > 0 && op1 < 4)
+					stk5.stack_operation(op1);
+				if(op1==4)
+					return;
+				}
+				}
+				break;
+		default:break;
+		
+	}
+	return;
+
+}
+
+
 int main()
 {
 	while(1)
@@ -81,73 +173,17 @@ int main()
 		int op;
 		cout<<"1.int\n2.char\n3.float\n4.double\n5.string\n6.exit\n";
 		cin>>op;
-		switch(op)
-		{
-			
-			case 1:cout<<"int stack application ready to use"<<endl;
-				while(1)
-				{
-					int op1;
-					cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
-					cin>>op1;
-					if(op1>=1 && op1<=4)
-					{
-						if(op1 == 4)
-							goto ABC;
-						stack <int> stk;
-						stk.stack_operation(op1);
-					}
+		char a[][10] = {"start","int","char","float","double","string"};
+		
+		if(op == 6)
+			exit(0);
+		
+		cout<<a[op]<<" stack operation ready to use"<<endl;
+		switch_fun(op);
+		
 
-				}
-			
-/*			case 2:cout<<"char stack application ready to use"<<endl;
-				while(1)
-				{
-					int op1;
-					cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
-					cin>>op1;
-					if(op>=1 && op<=4)
-					{
-						if(op == 4)
-							goto ABC;
-						stack<char>stk;
-						stk.stack_operation(op);
-					}
-
-				}
-			case 3:cout<<"double stack application ready to use"<<endl;
-				while(1)
-				{
-					int op1;
-					cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
-					cin>>op1;
-					if(op>=1 && op<=4)
-					{
-						if(op == 4)
-							goto ABC;
-						stack<double>stk;
-						stk.stack_operation(op);
-					}
-
-				}
-			case 4:cout<<"float stack application ready to use"<<endl;
-				while(1)
-				{
-					int op1;
-					cout<<"1.push\n2.pop\n3.display_stack\n4.main_menu"<<endl;
-					cin>>op1;
-					if(op>=1 && op<=4)
-					{
-						if(op == 4)
-							goto ABC;
-						stack<float>stk;
-						stk.stack_operation(op);
-					}
-
-				}*/
-			
-			default:break;
-	}
-
+		
 }
 }
+
+
